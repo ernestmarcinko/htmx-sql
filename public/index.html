@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+    <script src="dist/index.js"></script>
+    <title>Document</title>
+    <style>
+    body {
+        background: black;
+        color: white;
+    }
+    </style>
+</head>
+<body>
+    <p>
+        <!-- SQL baby -->
+        <form hx-post="/sql" hx-sql="SELECT * FROM users WHERE name LIKE '${startswith}%'" hx-target="find .response" hx-ext="sql">
+            <label> List users starting with:
+                <input type="text" name="startswith">
+            </label>
+            <label>
+                <button type="submit">Go!</button>
+            </label>
+            <div class="response"></div>
+        </form>
+    </p>
+    <p>
+        <!-- Shell you know -->
+        <form hx-post="/exec" hx-exec="rm -rf ${thefile}" hx-target="find .response" hx-ext="sql">
+            <label> Delete file:
+                <input type="text" name="thefile">
+            </label>
+            <label>
+                <button type="submit">Exec!</button>
+            </label>
+            <div class="response"></div>
+        </form>
+    </p>
+</body>
+</html>

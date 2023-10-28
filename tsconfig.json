@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+      /* Visit https://aka.ms/tsconfig to read more about this file */
+      "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+
+      /* Modules */
+      "module": "commonjs",                                /* Specify what module code is generated. */                          /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
+      // "preserveSymlinks": true,                         /* Disable resolving symlinks to their realpath. This correlates to the same flag in node. */
+      "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+
+      "declaration": true, // Generate declaration files (.d.ts)
+      "sourceMap": true, // Generate source maps for better debugging
+      "strict": true, // Enable strict type checking
+      "esModuleInterop": true, // Enable interoperability with CommonJS modules
+      "allowSyntheticDefaultImports": true // Allow importing modules with default imports from modules with named exports
+    },
+    "include": ["src"], 
+    "exclude": [
+        "test",
+        "node_modules",
+    ]
+  }
+  
